@@ -93,7 +93,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #F2F2F2;
 }
 
 main {
@@ -6174,41 +6174,6 @@ Use: .c-[name]
   -webkit-appearance: none;
 }
 
-.c-video.is--hidden,
-.c-gif.is--hidden {
-  display: none;
-}
-
-.c-video .c-button {
-  margin: 30px auto 0 auto;
-}
-
-.c-gif .c-button {
-  display: block;
-}
-
-.c-video .c-button {
-  display: none;
-}
-
-.c-video.video--active .video__upload-button {
-  display: none;
-}
-
-.c-video.video--active .c-button {
-  display: block;
-}
-
-.is--loading .c-video {
-  pointer-events: none;
-}
-
-.video__upload {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
 .c-logo {
     color: #000;
     text-transform: uppercase;
@@ -6227,9 +6192,15 @@ Use: .c-[name]
   border-radius: 100px;
   border: none;
   background: linear-gradient(to top right,#26bfbf,#8ceeee);
-  color: #ffffff;
   text-align: center;
   display: block;
+  color: #000;
+  transition: ease 300ms;
+  transition-property: transform, opacity;
+}
+
+.button--secondary {
+  background: linear-gradient(to top right,#FFD747, #ffe278);
 }
 
 @media (min-width: 768px) {
@@ -6245,30 +6216,10 @@ Use: .c-[name]
 
 html.has--mouse .c-button:hover {
   cursor: pointer;
-  color: #ffffff;
+  color: #000;
   opacity: 0.8;
   text-decoration: none;
-}
-
-.button--payoff {
-  position: relative;
-}
-
-.button--payoff::before {
-  content: attr(data-payoff);
-  position: absolute;
-  top: 12px;
-  left: 18px;
-  width: 100%;
-  text-align: center;
-  line-height: 1;
-  font-size: 8px;
-}
-
-.button--payoff .button__label {
-  display: inline-block;
-  -webkit-transform: translate3d(0, 4px, 0);
-          transform: translate3d(0, 4px, 0);
+  transform: scale(1.05);
 }
 
 .button--offset {
