@@ -19,7 +19,7 @@ jobs:
       uses: garygrossgarten/github-action-scp@release
       with:
         local: ./
-        remote: ../../var/www/swiper-app
+        remote: ../../var/www/swiper-website
         host: ${{ secrets.HOST }}
         username: githubcicd
         password: ${{ secrets.PASSWORD }}
