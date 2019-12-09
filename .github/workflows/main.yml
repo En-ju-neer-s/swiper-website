@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Check files
+      run:
+        ls -a
+    - name: Copy folder content recursively to remote
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: ./
+        remote: ../../var/www/swiper-app
+        host: ${{ secrets.HOST }}
+        username: githubcicd
+        password: ${{ secrets.PASSWORD }}
